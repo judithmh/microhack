@@ -8,16 +8,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: >
-          docker build -t microhackacr.azurecr.io/flightbookerfrontend:latest
-                       -f Flightbooker/flightbooker-frontend/Dockerfile
-                       Flightbooker/flightbooker-frontend/
+      - run: docker build -t microhackacr.azurecr.io/flightbookerfrontend:latest -f Flightbooker/flightbooker-frontend/Dockerfile Flightbooker/flightbooker-frontend/
       - run: docker push microhackacr.azurecr.io/flightbookerfrontend:latest
   build-backend:
     runs-on: ubuntu-latest
     steps:
-      - run: >
-          docker build -t microhackacr.azurecr.io/flightbookerbackend:latest
-                       -f Flightbooker/flightbooker-backend/Dockerfile
-                       Flightbooker/flightbooker-backend/
+      - run: docker build -t microhackacr.azurecr.io/flightbookerbackend:latest -f Flightbooker/flightbooker-backend/Dockerfile Flightbooker/flightbooker-backend/
       - run: docker push microhackacr.azurecr.io/flightbookerbackend:latest
