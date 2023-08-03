@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: ls ${{ github.workspace }}
+      - run: ls -la
       - run: docker build -t microhackacr.azurecr.io/flightbookerfrontend:latest -f ${{ github.workspace }}/Flightbooker/flightbooker-frontend/Dockerfile ${{ github.workspace }}/Flightbooker/flightbooker-frontend/
       - run: docker push microhackacr.azurecr.io/flightbookerfrontend:latest
   #build-backend:
